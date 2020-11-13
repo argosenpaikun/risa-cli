@@ -24,4 +24,5 @@ console.log(charUtil.toUpper(args[0]));
 console.log(charUtil.alternateCharOdd(args[0].split('')));
 
 csv.writeArrayToCSV([], 'hello-world.csv', args[0].split(''), ',');
+
 console.log("CSV created!");

@@ -30,6 +30,7 @@
     </properties>
 
     <build>
+        <finalName>risa-cli</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,0 +1,5 @@
+save dependency
+npm install --save my-dependency
+
+save installed dependency
+npm i -s assert

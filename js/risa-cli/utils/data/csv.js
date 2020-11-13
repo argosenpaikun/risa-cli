@@ -1,5 +1,5 @@
 const fs = require('fs');
-const csvReader = require('csv-parser');
+const parse = require('csv-parser');
 const csvWriter = require('csv-writer');
 const fastCSV = require('fast-csv');
 const { convertArrayToCSV } = require('convert-array-to-csv');
@@ -11,7 +11,7 @@ class CSV {
      * @param {*} filename csv filename
      */
     readData(filename) {
-        return fileStream.createReadStream(filename).pipe(csvReader());
+        return fs.readFileSync(filename, 'utf8');
     }
 
     /**
