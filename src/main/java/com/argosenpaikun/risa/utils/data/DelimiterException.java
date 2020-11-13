@@ -12,12 +12,19 @@ package com.argosenpaikun.risa.utils.data;
 public class DelimiterException extends Exception {
 
     /**
+     * Initialize delimiter exception (Constructor without parameter)
+     */
+    public DelimiterException() {
+        super();
+    }
+
+    /**
      * Initialize delimiter exception
      *
-     * @param delimiter delimiter
+     * @param msg message
      */
-    public DelimiterException(String delimiter) {
-        super(delimiter);
+    public DelimiterException(String msg) {
+        super(msg);
     }
 
     /**
