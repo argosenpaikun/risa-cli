@@ -12,7 +12,6 @@ import com.argosenpaikun.risa.utils.data.CSV;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * This class manage standard output argument
@@ -70,47 +69,12 @@ public class StdOut {
         System.out.println(charUtil.toUpper(value));
 
         // print alternate upper and lower case
-        System.out.println(charUtil.alternateCharCase(value, caseSelector(value)));
+        System.out.println(charUtil.alternateCharOdd(value));
 
         // create csv file based on the value string
         csv.writeData(new ArrayList<>(Collections.singletonList(charUtil.stringToCharAt(value))),
                 "hello-world.csv");
         System.out.println("CSV created!");
-    }
-
-    /**
-     * Case selector
-     *
-     * @param value string value
-     * @return  case selector
-     */
-    private List<Boolean> caseSelector(String value) {
-        List<Boolean> cs = new ArrayList<>();
-        cs.add(false);  // h
-        cs.add(true);   // e
-        cs.add(false);  // l
-        cs.add(true);   // l
-        cs.add(false);  // o
-        cs.add(false);  //
-        cs.add(false);  // w
-        cs.add(true);   // o
-        cs.add(false);  // r
-        cs.add(true);   // l
-        cs.add(false);  // d
-
-        // if size is more than value length
-        // in case, if the length of case selector is bigger then value length,
-        // just to make it efficiently work
-        if(cs.size() > value.length()) {
-            while (cs.size() > value.length()) {
-                cs.remove(cs.size() - 1);
-            }
-        } else if(cs.size() < value.length()) {
-            while (cs.size() < value.length()) {
-                cs.add(false);
-            }
-        }
-        return cs;
     }
 
     /**

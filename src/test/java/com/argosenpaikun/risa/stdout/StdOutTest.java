@@ -18,7 +18,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -46,34 +45,7 @@ public class StdOutTest {
     @Test
     public void hello_world_alternate() {
         String value = "hello world";
-
-        List<Boolean> cs = new ArrayList<>();
-        cs.add(false);  // h
-        cs.add(true);   // e
-        cs.add(false);  // l
-        cs.add(true);   // l
-        cs.add(false);  // o
-        cs.add(false);  //
-        cs.add(false);  // w
-        cs.add(true);   // o
-        cs.add(false);  // r
-        cs.add(true);   // l
-        cs.add(false);  // d
-
-        // if size is more than value length
-        // in case, if the length of case selector is bigger then value length,
-        // just to make it efficiently work
-        if(cs.size() > value.length()) {
-            while (cs.size() > value.length()) {
-                cs.remove(cs.size() - 1);
-            }
-        } else if(cs.size() < value.length()) {
-            while (cs.size() < value.length()) {
-                cs.add(false);
-            }
-        }
-
-        assertEquals(charUtil.alternateCharCase(value, cs), "hElLo wOrLd");
+        assertEquals(charUtil.alternateCharOdd(value), "hElLo wOrLd");
     }
 
     @Test
